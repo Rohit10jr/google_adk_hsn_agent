@@ -58,7 +58,7 @@ pip install -r requirements.txt
 ## Running the Agent (ADK Web)
 
 ### 1. Set Up Google ADK
-- Ensure you have the [Google ADK](https://github.com/google/adk) installed and configured.
+- Ensure you have the [Google ADK](https://github.com/google/adk-python) installed and configured.
 - You may need to set up credentials or environment variables(.env).
 
 ### 2. Start the ADK Web Interface
