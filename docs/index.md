@@ -69,6 +69,28 @@ The HSN Validation Agent is built using the Google ADK (Agent Developer Kit) fra
 
 ---
 
+## 6. Bonus Enhancements
+
+### 6.1 Making the Agent More Interactive or Conversational
+- **Clarifying Questions**: If the input is ambiguous or contains potential errors (e.g., mixed code lengths, typos), the agent can prompt the user for clarification or suggest corrections.
+- **Maintain Conversational Context**: Maintain session context to allow follow-up questions, e.g., "Show me details for the last code again" or "Validate another code."
+- **Summarize and Expand**: The agent can summarize results and offer to go down into more details for specific codes on user request.
+- **User Guidance**: Provide examples and gentle guidance when inputs are missing or malformed, enhancing usability.
+
+### 6.2 Supporting Live Updates to HSN Master Data
+- **Hot Reloading**: Use a file-watching tool (e.g., watchdog) to reload updated Excel files into memory without restarting the agent.
+- **Admin Interface**: Add a secure admin panel or CLI command to upload updated master data and trigger reload.
+- **Database Backend**: For larger or frequently updated datasets, migrate to a lightweight database (e.g., SQLite, PostgreSQL) and implement change tracking or versioning.
+- **API Integration**: Allow the agent to fetch the latest HSN data from a remote API endpoint, supporting real-time updates.
+
+### 6.3 Feedback on HSN Master Data Quality
+- **Invalidity Pattern Analysis**: Log invalid or unrecognized codes to detect trends that may indicate gaps in the master data.
+- **User Feedback**: Allow users to flag codes they believe are valid but are marked invalid, collecting feedback for data stewards.
+- **Data Consistency Checks**: Periodically scan the master data for duplicates, inconsistent descriptions, or format anomalies, and report issues to maintainers.
+- **Reporting Dashboard**: Build a dashboard to visualize common errors, rejection reasons, and highlight data inconsistencies.
+
+---
+
 ## Deliverables
 - Source code (`hsn_agent/agent.py`)
 - Documentation (`docs/index.md`,`docs/index_diagrams.md`, `readme.md`)

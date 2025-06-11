@@ -3,6 +3,15 @@
 ## 📝 Overview
 This project implements an HSN (Harmonized System of Nomenclature) code validation agent using the [Google ADK (Agent Development Kit)](https://github.com/google/adk-python) framework. The agent loads a master HSN code Excel file, provides a tool for validating HSN codes, and includes guardrails for both model and tool calls. It is designed to be run as an ADK agent with a web interface for interactive use.
 
+## 📚 Documentation
+
+For more detailed explanations, diagrams, and examples, see the [`docs/`](./docs) folder:
+
+- [`index.md`](./docs/index.md): Detailed project overview, structure, and design.
+- [`index_diagrams.md`](./docs/index_diagrams.md): Architecture diagrams and data flow illustrations.
+
+You can explore these files directly in the repository or view them rendered on GitHub.
+
 ## ✨ Features
 - **HSN Code Validation Tool**: Validates HSN codes against a preloaded master data file (`HSN_SAC.xlsx`).
 - **Guardrails**: Blocks inappropriate user input and restricted HSN codes.
