@@ -19,7 +19,7 @@ This project implements an HSN (Harmonized System of Nomenclature) code validati
 ├── hsn_agent/
 │   ├── __init__.py            # Package initializer
 │   ├── agent.py               # Main agent logic, tool, and callbacks
-│   └── .env/           # Your environment variable containing llm api key
+│   └── .env/                  # Your environment variable containing llm api key
 ├── requirements.txt           # Main Python dependencies requirements list
 ├── .gitignore                 # Git ignore rules
 ├── readme.md                  # This file
