@@ -124,20 +124,9 @@ def block_hsn_code_tool_guardrail(
 
     valid_codes = []
     invalid_codes = []
-    # blocked_messages = [
-    #     "Validation for this category of codes is currently restricted.",
-    #     "HSN code falls under a restricted service category and cannot be validated.",
-    #     "This input is restricted by policy and cannot be processed."
-    # ]
 
     for code in hsn_codes_to_check:
         if isinstance(code, str) and code.strip().startswith("12345"):
-            # invalid_codes.append({
-            #     "input_hsn": code.strip(),
-            #     "is_valid": False,
-            #     "reason_code": "BLOCKED_BY_GUARDRAIL",
-            #     "message": random.choice(blocked_messages)
-            # })
             invalid_codes.append(code.strip())
         else:
             valid_codes.append(code.strip())
@@ -226,15 +215,11 @@ session_service_stateful = InMemorySessionService()
 APP_NAME = "hsn_code_agent"
 SESSION_ID_STATEFUL = "session_state_demo_001"
 USER_ID_STATEFUL = "user_state_demo"
-# initial_state = {
-#     "user_preference": "hi can you find hsn codes"
-# }
 
 session_stateful = session_service_stateful.create_session(
     app_name=APP_NAME, 
     user_id=USER_ID_STATEFUL,
     session_id=SESSION_ID_STATEFUL
-    # state=initial_state 
 )
 
 print(f"Session '{SESSION_ID_STATEFUL}' created for user '{USER_ID_STATEFUL}'.")

@@ -72,7 +72,6 @@ The HSN Validation Agent is built using the Google ADK (Agent Developer Kit) fra
 ## Deliverables
 - Source code (`hsn_agent/agent.py`)
 - Documentation (`docs/index.md`, `readme.md`)
-- Run instructions (see README)
+- Run instructions (`readme.md`)
 
 ---
-*Last updated: 2025-06-11*
