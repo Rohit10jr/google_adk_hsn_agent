@@ -6,6 +6,7 @@ from google.adk.runners import Runner
 from google.adk.sessions import InMemorySessionService
 from .callback import block_hsn_code_tool_guardrail, block_keyword_model_guardrail
 from .tool import hsn_code_validation_tool
+from .prompt import description, instruction
 
 
 # --- Initialize the Session Memory for Agent ---
@@ -27,14 +28,8 @@ print(f"Session '{SESSION_ID_STATEFUL}' created for user '{USER_ID_STATEFUL}'.")
 root_agent = Agent(
     name="hsn_code_agent",
     model="gemini-1.5-flash-001",
-    description="Agent to validate and look up HSN codes using a preloaded master data file.",
-    instruction="""
-    You are a helpful and efficient assistant for validating HSN codes.
-    Your primary goal is to understand the user's request, identify any HSN codes mentioned,
-    and use the provided 'hsn_code_validation_tool' to check their validity.
-    Present the results from the tool to the user in a clear, easy-to-read format.
-    If a code is valid, state its description. If invalid, state the reason.
-    """,
+    description=description,
+    instruction=instruction, 
     tools=[hsn_code_validation_tool],
     output_key="hsn_agent_last_response",
     before_model_callback=block_keyword_model_guardrail, 
