@@ -239,16 +239,6 @@ session_stateful = session_service_stateful.create_session(
 
 print(f"Session '{SESSION_ID_STATEFUL}' created for user '{USER_ID_STATEFUL}'.")
 
-# retrieved_session = session_service_stateful.get_session(app_name=APP_NAME,
-#                                                          user_id=USER_ID_STATEFUL,
-#                                                          session_id = SESSION_ID_STATEFUL)
-
-# print("\n--- Initial Session State ---")
-# if retrieved_session:
-#     print(retrieved_session)
-# else:
-#     print("Error: Could not retrieve session.")
-
 
 # --- Part 4: Initialize the Root Agent ---
 root_agent = Agent(
