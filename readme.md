@@ -1,18 +1,9 @@
 # Google ADK HSN Validation Agent
 
-## Overview
+## 📝 Overview
 This project implements an HSN (Harmonized System of Nomenclature) code validation agent using the [Google ADK (Agent Development Kit)](https://github.com/google/adk-python) framework. The agent loads a master HSN code Excel file, provides a tool for validating HSN codes, and includes guardrails for both model and tool calls. It is designed to be run as an ADK agent with a web interface for interactive use.
 
-## 📚 Documentation
-
-For more detailed explanations, diagrams, and examples, see the [`docs/`](./docs) folder:
-
-- [`index.md`](./docs/index.md): Detailed project overview, structure, and design.
-- [`index_diagrams.md`](./docs/index_diagrams.md): Architecture diagrams and data flow illustrations.
-
-You can explore these files directly in the repository or view them rendered on GitHub.
-
-## Features
+## ✨ Features
 - **HSN Code Validation Tool**: Validates HSN codes against a preloaded master data file (`HSN_SAC.xlsx`).
 - **Guardrails**: Blocks inappropriate user input and restricted HSN codes.
 - **Session Management**: Uses in-memory session service for stateful interactions.
@@ -38,7 +29,7 @@ You can explore these files directly in the repository or view them rendered on 
 └── venv/                      # virtual environment
 ```
 
-## HSN Agent Logic
+## 🧠 HSN Agent Logic
 - Loads HSN data from `data/HSN_SAC.xlsx` into memory for fast lookup.
 - Provides a tool (`hsn_code_validation_tool`) to validate HSN codes (numeric, 2/4/6/8 digits, must exist in master data).
 - Model guardrail blocks user messages with inappropriate language.
@@ -67,7 +58,7 @@ pip install -r requirements.txt
 - Place your `HSN_SAC.xlsx` file in the `data/` directory.
 - The Excel file must have columns: `HSNCode` and `Description`.
 
-## Running the Agent (ADK Web)
+## 🚀 Running the Agent (ADK Web)
 
 ### 1. Set Up Google ADK
 - Ensure you have the [Google ADK](https://github.com/google/adk-python) installed and configured.
@@ -80,20 +71,19 @@ adk web
 - This will launch the web UI for interacting with your agent.
 - By default, the agent is configured in `hsn_agent/agent.py`.
 
-## Modularity & Customization
+## 🛠️ Modularity & Customization
 - **Agent Logic**: Edit `agent.py` to customize the agent’s behavior, tool usage, and overall validation flow.
 - **Guardrails**: Modify `callback.py` to update tool guardrails, block rules, or response formatting.
 - **Data Handling**: Adjust `data_loader.py` to change how HSN/SAC data is loaded or preprocessed.
 - **Tools**: Define or extend tool functionality in `tools.py` — such as HSN code validation or future utilities.
 - **Session State**: Currently uses in-memory state via `ToolContext`; replace with persistent storage for production use.
 
-
-## Troubleshooting
+## 🐞 Troubleshooting
 - If you see errors about missing `HSN_SAC.xlsx`, ensure the file exists in `data/` and has the correct columns.
 - For dependency issues, check `requirements.txt` and reinstall as needed.
 - For ADK-specific issues, refer to the [Google ADK documentation](https://github.com/google/adk-python).
 
-## License
-This project is for demonstration and internal use. See the google ADK repository for license details.
+## 📄 License
+This project is for demonstration and internal use. See the repository or ADK for license details.
 
 ---
