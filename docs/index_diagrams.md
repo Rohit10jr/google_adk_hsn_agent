@@ -48,7 +48,7 @@ graph TD
 ```
 
 ### Example 2: Invalid and Blocked Codes
-**Input:** `["12345678", "99999999", "abcd"]`
+**Input:** `check hsn validation for "12345678", "99999999", "abcd"`
 
 **Output:**
 ```json
@@ -61,7 +61,7 @@ graph TD
 
 ---
 
-## 4. (Optional) Hierarchical Validation Example
+## 4. Hierarchical Validation Example
 **Input:** `"01011010"`
 
 **Output:**
@@ -70,7 +70,8 @@ graph TD
   "input_hsn": "01011010",
   "is_valid": false,
   "reason_code": "NOT_FOUND",
-  "message": "HSN code not found. However, parent codes found: ['010110', '0101', '01']"
+  "message": "Code not found, but its parent chapter '{parent_code}' ({parent_description}) is valid."
+
 }
 ```
 

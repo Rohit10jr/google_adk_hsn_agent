@@ -44,7 +44,7 @@ The HSN Validation Agent is built using the Google ADK (Agent Developer Kit) fra
 - **Format Validation**: Checks if each HSN code is a string of digits and has a length of 2, 4, 6, or 8.
 - **Existence Validation**: Checks if the code exists in the preloaded dictionary (from the Excel file).
 
-### (Optional) Hierarchical Validation
+### Hierarchical Validation
 - For advanced use, the agent could check if parent codes (e.g., for 8-digit code `01011010`, check `010110`, `0101`, `01`) exist in the dataset.
 - This adds value by providing context or fallback validation, e.g., if a specific code is missing but a parent exists, the agent can inform the user.
 
@@ -71,7 +71,7 @@ The HSN Validation Agent is built using the Google ADK (Agent Developer Kit) fra
 
 ## Deliverables
 - Source code (`hsn_agent/agent.py`)
-- Documentation (`docs/index.md`, `readme.md`)
+- Documentation (`docs/index.md`,`docs/index_diagrams.md`, `readme.md`)
 - Run instructions (`readme.md`)
 
 ---
