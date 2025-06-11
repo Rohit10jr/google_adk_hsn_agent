@@ -101,14 +101,12 @@ def block_hsn_code_tool_guardrail(
     # Add a helpful message for the LLM
     tool_context.state["guardrail_hsn_block_triggered"] = True
     tool_context.state["llm_message"] = (
-        f"Some HSN codes were blocked due to policy restrictions and have been removed from the tool call.\n\n"
-        f" Blocked codes: {blocked_codes}\n"
-        f" Unblocked codes: {unblocked_codes}\n"
-        f"Please run the tool call using only the unblocked codes to check if they exist in the master data and return their corresponding descriptions to user."
-)
-
-    print(f"--- Callback: Returning structured block response with valid and invalid codes. ---")
-
+            f"Some HSN codes were blocked due to policy restrictions and have been removed from the tool call.\n\n"
+            f" Blocked codes: {blocked_codes}\n"
+            f" Unblocked codes: {unblocked_codes}\n"
+            f"Please run the tool call using only the unblocked codes to check if they are valid and exist in the master data"
+    )
+    
     return {
         "unblocked_codes": unblocked_codes,
         "blocked_codes": blocked_codes,

@@ -83,5 +83,7 @@ def hsn_code_validation_tool(hsn_inputs: List[str], tool_context:ToolContext) ->
                 })
 
     tool_context.state["hsn_tool_last_result"] = results
+    print("--- Agent Tool Result ---")
+    print(results)
 
     return results
