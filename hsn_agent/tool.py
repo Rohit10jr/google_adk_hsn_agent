@@ -58,7 +58,7 @@ def hsn_code_validation_tool(hsn_inputs: List[str], tool_context:ToolContext) ->
                         "input_hsn": code,
                         "is_valid": False,
                         "reason_code": "NOT_FOUND_BUT_PARENT_EXISTS",
-                        "message": f"Code not found, but its parent category '{parent_code}' ({parent_description}) is valid."
+                        "message": f"HSN Code not found, but its parent category '{parent_code}' ({parent_description}) is valid."
                     })
                     parent_found = True
             # Check for the 2-digit chapter of a 4-digit code if no other parent was found
@@ -70,7 +70,7 @@ def hsn_code_validation_tool(hsn_inputs: List[str], tool_context:ToolContext) ->
                         "input_hsn": code,
                         "is_valid": False,
                         "reason_code": "NOT_FOUND_BUT_PARENT_EXISTS",
-                        "message": f"Code not found, but its parent chapter '{parent_code}' ({parent_description}) is valid."
+                        "message": f"HSN Code not found, but its parent chapter '{parent_code}' ({parent_description}) is valid."
                     })
                     parent_found = True
 

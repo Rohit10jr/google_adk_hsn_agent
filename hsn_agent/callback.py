@@ -81,37 +81,37 @@ def block_hsn_code_tool_guardrail(
     if not hsn_codes_to_check:
         return None
 
-    valid_codes = []
-    invalid_codes = []
+    unblocked_codes = []
+    blocked_codes = []
 
     for code in hsn_codes_to_check:
         if isinstance(code, str) and code.strip().startswith("12345"):
-            invalid_codes.append(code.strip())
+            blocked_codes.append(code.strip())
         else:
-            valid_codes.append(code.strip())
+            unblocked_codes.append(code.strip())
 
     # If all codes are valid, proceed as usual
-    if not invalid_codes:
+    if not blocked_codes:
         print(f"--- Callback: All HSN codes valid. Proceeding with original tool call. ---")
         return None
 
     # Modify args to exclude invalid codes
-    args["hsn_inputs"] = valid_codes
+    args["hsn_inputs"] = unblocked_codes
 
     # Add a helpful message for the LLM
     tool_context.state["guardrail_hsn_block_triggered"] = True
     tool_context.state["llm_message"] = (
         f"Some HSN codes were blocked due to policy restrictions and have been removed from the tool call.\n\n"
-        f" Blocked codes: {invalid_codes}\n"
-        f" Proceeding with allowed codes: {valid_codes}\n"
-        f" Please make the tool call again using only the updated input."
-    )
+        f" Blocked codes: {blocked_codes}\n"
+        f" Unblocked codes: {unblocked_codes}\n"
+        f"Please run the tool call using only the unblocked codes to check if they exist in the master data and return their corresponding descriptions to user."
+)
 
     print(f"--- Callback: Returning structured block response with valid and invalid codes. ---")
 
     return {
-        "valid_codes": valid_codes,
-        "blocked_codes": invalid_codes,
+        "unblocked_codes": unblocked_codes,
+        "blocked_codes": blocked_codes,
         "llm_message": tool_context.state["llm_message"],
         "next_action": "RETRY_WITH_FILTERED_INPUT"
     }

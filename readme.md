@@ -62,13 +62,40 @@ pip install -r requirements.txt
 
 ### 1. Set Up Google ADK
 - Ensure you have the [Google ADK](https://github.com/google/adk-python) installed and configured.
-- You may need to set up credentials or environment variables(.env).
+- You may need to set up credentials or environment variables (.env).
 
-### 2. Start the ADK Web Interface
-```powershell
+### 2. Start the ADK Web Interface or API Server
+You can start the agent using either the direct ADK command or the provided script:
+
+#### a. Start the Web UI directly with the ADK command
+```bash
 adk web
 ```
-- This will launch the web UI for interacting with your agent.
+#### b. Start the API Server directly with the ADK command
+```bash
+adk api_server
+```
+
+#### c. Make the script executable (first time only)
+```bash
+chmod +x command.sh
+```
+
+#### d. Start the Web UI using the script
+```bash
+./command.sh run
+```
+This will activate your virtual environment and launch the ADK web UI for interacting with your agent.
+
+#### e. Start the API Server using the script
+```bash
+./command.sh server
+```
+This will start the ADK API server for programmatic access.
+
+
+This will launch the web UI for interacting with your agent.
+
 - By default, the agent is configured in `hsn_agent/agent.py`.
 
 ## 🛠️ Modularity & Customization
