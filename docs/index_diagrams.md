@@ -10,7 +10,7 @@ graph TD
     D -->|Model Guardrail| E[Block inappropriate input]
     D -->|Tool Guardrail| F[Block restricted HSN codes]
     C --> G[HSN Validation Tool]
-    G --> H[HSN Master Data (Excel/In-Memory)]
+    G --> H[HSN Master Data - Excel/In-Memory]
     G --> I[Validation Results]
     I --> B
     B --> A

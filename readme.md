@@ -36,7 +36,7 @@ This project implements an HSN (Harmonized System of Nomenclature) code validati
 
 ### 1. Clone the Repository
 ```powershell
-git clone <your-repo-url>
+git clone https://github.com/Rohit10jr/google_adk_hsn_agent.git
 cd google_adk_hsn_agent
 ```
 
@@ -79,6 +79,6 @@ adk web
 - For ADK-specific issues, refer to the [Google ADK documentation](https://github.com/google/adk-python).
 
 ## License
-This project is for demonstration and internal use. See the repository or ADK for license details.
+This project is for demonstration and internal use. See the google ADK repository for license details.
 
 ---
