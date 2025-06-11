@@ -44,10 +44,9 @@ def load_hsn_data(file_path: str) -> Dict[str, str]:
     
 # Load the data into a global variable as our in-memory data store.
 script_dir = os.path.dirname(__file__) 
-file_path = os.path.join(script_dir, "HSN_SAC.xlsx")
-# file_path = os.path.join(script_dir, "data/HSN_SAC.xlsx")
-# file_path = os.path.join(script_dir, "..", "data", "HSN_SAC.xlsx")
-# file_path = os.path.abspath(file_path)
+# file_path = os.path.join(script_dir, "HSN_SAC.xlsx")
+file_path = os.path.join(script_dir, "..", "data", "HSN_SAC.xlsx")
+file_path = os.path.abspath(file_path)
 hsn_master_data = load_hsn_data(file_path)
 
 
