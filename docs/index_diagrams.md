@@ -59,9 +59,7 @@ graph TD
 ]
 ```
 
----
-
-## 4. Hierarchical Validation Example
+### Example 3: Hierarchical Validation 
 **Input:** `"01011010"`
 
 **Output:**
@@ -70,7 +68,7 @@ graph TD
   "input_hsn": "01011010",
   "is_valid": false,
   "reason_code": "NOT_FOUND",
-  "message": "Code not found, but its parent chapter '{parent_code}' ({parent_description}) is valid."
+  "message": "HSN Code not found, but its parent chapter '{parent_code}' ({parent_description}) is valid."
 
 }
 ```

@@ -2,7 +2,7 @@ from google.adk.tools.tool_context import ToolContext
 from typing import List, Dict, Union, Any, Optional
 from .data_loader import hsn_master_data
 
-# --- Part 3: Initialize the tool for agent ---
+# --- Initialize the tool for agent ---
 def hsn_code_validation_tool(hsn_inputs: List[str], tool_context:ToolContext) -> List[Dict[str, Any]]:
     """
     Validates one or more HSN codes against the pre-loaded HSN master data.
